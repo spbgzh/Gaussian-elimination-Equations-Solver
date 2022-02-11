@@ -18,7 +18,6 @@ void debug_vector_print(double *v, int N)
 {
     for (size_t i = 0; i < N; i++)
     {
-        cout << setiosflags(ios::left) << setw(6) << setprecision(3) << v[i] << ' ';
+        cout << setiosflags(ios::left) << setprecision(3) << v[i] << endl;
     }
-    cout << endl;
 }

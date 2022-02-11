@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include "io.hpp"
 #include "debug.hpp"
 using namespace std;
@@ -47,7 +48,11 @@ void vector_delete(double *v)
 void ans_print(double *ans, int N)
 {
     cout << "Your ans is:" << endl;
-    debug_vector_print(ans, N);
+    for (size_t i = 0; i < N; i++)
+    {
+        cout << setiosflags(ios::left) << setw(6) << setprecision(3) << ans[i] << ' ';
+    }
+    cout << endl;
 }
 
 void ans_delete(double *ans)

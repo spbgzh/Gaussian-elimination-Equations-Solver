@@ -4,7 +4,7 @@
 
 double *gaussin(double **a, double *b, int n)
 {
-    for (size_t i = 0; i < n-1 ; i++)
+    for (size_t i = 0; i < n - 1; i++)
     {
         if (a[i][i] == 0)
         {
@@ -20,6 +20,12 @@ double *gaussin(double **a, double *b, int n)
             b[k] = b[k] - 1.0 * c * b[i];
         }
     }
+
+    std::cout << "upper triangular matrix" << std::endl;
+    debug_MT_print(a, n);
+    std::cout << "the transformed vector b:" << std::endl;
+    debug_vector_print(b, n);
+
     double *x = new double[n];
     for (int i = n - 1; i >= 0; i--)
     {
@@ -28,7 +34,7 @@ double *gaussin(double **a, double *b, int n)
         {
             s = s + a[i][j] * x[j];
         }
-        x[i] =( b[i] - s )/ a[i][i];
+        x[i] = (b[i] - s) / a[i][i];
     }
     return x;
 }
