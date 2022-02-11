@@ -3,17 +3,29 @@
 #include "io.hpp"
 #include "gaussin.hpp"
 using namespace std;
-
-int main()
+extern double **MT;
+extern double *vectorB;
+int main(int argc, char *argv[])
 {
-    int N = init();
-    double **MT = MT_create(N);
-    double *vectorB = vector_create(N);
+    int N = 0;
+
+    cout << "Linear Algebraic Equations Solver" << endl;
+    if (judge_input_from_file())
+    {
+        getchar();
+        load_file(&N, MT, vectorB);
+    }
+    else
+    {
+        N = init();
+        MT = MT_create_from_keyboard(N);
+        vectorB = vector_create_from_keyboard(N);
+    }
 
     // input debug
-    /*
+    /* 
     debug_MT_print(MT, N);
-    debug_vector_print(vector, N);
+    debug_vector_print(vectorB, N); 
     */
 
     double *vectorAns = gaussin(MT, vectorB, N);
