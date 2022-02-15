@@ -8,7 +8,6 @@ PROJECT(LinearAlgebraicEquationsSolver)
 
 FILE(GLOB main "${CMAKE_SOURCE_DIR}/*.cpp")
 FILE(GLOB SOURCE1 "${CMAKE_SOURCE_DIR}/src/*.cpp")
-FILE(GLOB SOURCE2 "${CMAKE_SOURCE_DIR}/include/*.hpp")
 INCLUDE_DIRECTORIES("${CMAKE_SOURCE_DIR}/include/")
 
 ADD_EXECUTABLE(EquationsSolver ${main} ${SOURCE1} ${SOURCE2})
