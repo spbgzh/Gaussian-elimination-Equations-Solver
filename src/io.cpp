@@ -184,25 +184,30 @@ void vector_delete(double *v)
 
 void ans_print(double *ans, int N)
 {
-    cout << "Vector x* is:" << endl;
-    for (size_t i = 0; i < N; i++)
+    if (ans == nullptr)
+        cout << "No answer or have infinite answer" << endl;
+    else
     {
-        cout << setiosflags(ios::left) << setw(6) << setprecision(3) << ans[i] << endl;
-    }
-    double vectorR[N];
-    for (size_t i = 0; i < N; i++)
-    {
-        double sum=0;
-        for (size_t j = 0; j < N; j++)
+        cout << "Vector x* is:" << endl;
+        for (size_t i = 0; i < N; i++)
         {
-            sum+=ans[i]*MT[i][j];
+            cout << setiosflags(ios::left) << setw(6) << setprecision(3) << ans[i] << endl;
         }
-        vectorR[i]=sum-*(vectorB+i);
-    }
-    cout << "Vector r is:" << endl;
-    for (size_t i = 0; i < N; i++)
-    {
-        cout << setiosflags(ios::left) << setw(6) << setprecision(3) << vectorR[i] << endl;
+        double vectorR[N];
+        for (size_t i = 0; i < N; i++)
+        {
+            double sum = 0;
+            for (size_t j = 0; j < N; j++)
+            {
+                sum += ans[i] * MT[i][j];
+            }
+            vectorR[i] = sum - *(vectorB + i);
+        }
+        cout << "Vector r is:" << endl;
+        for (size_t i = 0; i < N; i++)
+        {
+            cout << setiosflags(ios::left) << setw(6) << setprecision(3) << vectorR[i] << endl;
+        }
     }
 }
 
