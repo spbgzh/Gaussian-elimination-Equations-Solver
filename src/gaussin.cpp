@@ -5,8 +5,6 @@
 #include "gaussin.hpp"
 #define deviation 1e-10
 
-
-
 double *gaussin(double **a, double *b, int n)
 {
     for (size_t i = 0; i < n - 1; i++)
@@ -41,7 +39,7 @@ double *gaussin(double **a, double *b, int n)
     debug_vector_print(b, n);
 
     bool D = false;
-    for (size_t i = 0; i < n; i++)
+    for (size_t i = 0; i < n - 1; i++)
     {
         if (fabs(a[i][i]) <= deviation)
         {
@@ -49,14 +47,12 @@ double *gaussin(double **a, double *b, int n)
             break;
         }
     }
-    if (D)
-        return nullptr;
 
     double *x = new double[n];
-    for (size_t i = n - 1; i >= 0; i--)
+    for (int i = n - 1; i >= 0; i--)
     {
         double s = 0;
-        for (size_t j = i + 1; j < n; j++)
+        for (int j = i + 1; j < n; j++)
         {
             s = s + a[i][j] * x[j];
         }
