@@ -7,9 +7,16 @@ set( CMAKE_CXX_FLAGS "-std=c++17" )
 PROJECT(LinearAlgebraicEquationsSolver) 
 
 FILE(GLOB main "${CMAKE_SOURCE_DIR}/*.cpp")
+<<<<<<< HEAD
 FILE(GLOB SRC "${CMAKE_SOURCE_DIR}/src/*.cpp")
 FILE(GLOB INCLUDE "${CMAKE_SOURCE_DIR}/include/*.hpp")
 
 INCLUDE_DIRECTORIES("${CMAKE_SOURCE_DIR}/include/")
 
 ADD_EXECUTABLE(EquationsSolver ${main} ${SRC} ${INCLUDE})
+=======
+FILE(GLOB SOURCE "${CMAKE_SOURCE_DIR}/src/*.cpp")
+INCLUDE_DIRECTORIES("${CMAKE_SOURCE_DIR}/include/")
+
+ADD_EXECUTABLE(EquationsSolver ${main} ${SOURCE})
+>>>>>>> 5563626d087bc789343b6175b2b4e93912ba8551
