@@ -6,8 +6,8 @@
 #include "io.hpp"
 #include "debug.hpp"
 using namespace std;
-double **MT;
-double *vectorB;
+extern double **MT;
+extern double *vectorB;
 int init()
 {
     int n;
@@ -203,11 +203,13 @@ void ans_print(double *ans, int N)
             }
             vectorR[i] = sum - *(vectorB + i);
         }
+/*         
         cout << "Vector r is:" << endl;
         for (size_t i = 0; i < N; i++)
         {
             cout << setiosflags(ios::left) << setw(6) << setprecision(3) << vectorR[i] << endl;
         }
+*/
     }
 }
 

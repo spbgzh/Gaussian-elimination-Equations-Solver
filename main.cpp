@@ -3,8 +3,8 @@
 #include "io.hpp"
 #include "gaussin.hpp"
 using namespace std;
-extern double **MT;
-extern double *vectorB;
+double **MT;
+double *vectorB;
 int main(int argc, char *argv[])
 {
     int N = 0;

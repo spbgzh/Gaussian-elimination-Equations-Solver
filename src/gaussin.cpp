@@ -21,6 +21,7 @@ double *gaussin(double **a, double *b, int n)
                 }
             }
         }
+        
         for (size_t k = i + 1; k < n; k++)
         {
             double c = a[k][i] / a[i][i];
